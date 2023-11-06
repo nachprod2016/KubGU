@@ -51,6 +51,7 @@ void userInterface()
                 int size = sumPersons(fileName);
                 Person * persons = createList(size, fread);
                 showFile(persons, size);
+                delete [] persons;
                 fclose(fread);
                 break;
             }
@@ -91,6 +92,8 @@ void userInterface()
                 insertionSort(persons, size);
                 std::cout << "После сортировки: " << std::endl;
                 showFile(persons, size);
+                delete [] persons;
+                fclose(fread);
                 break;
             }
             case 5:
@@ -112,6 +115,8 @@ void userInterface()
                 qSort(persons, 0, size - 1);
                 std::cout << "После сортировки: " << std::endl;
                 showFile(persons, size);
+                delete [] persons;
+                fclose(fread);
                 break;
             }
             case 6:
